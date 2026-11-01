@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mock Tapeout — learn chip tapeout on real boards</title>
+<meta name="description" content="An open virtual fab: a PDK and an RTL-to-PCB flow that teach the full chip tapeout flow with standard logic ICs. Boards back in a week, every net probeable.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect x='1' y='1' width='14' height='14' rx='2' fill='%23b5651d'/%3E%3Crect x='4.5' y='4.5' width='7' height='7' fill='none' stroke='white' stroke-width='1.4'/%3E%3C/svg%3E">
+<style>
+  :root { --bg:#ffffff; --fg:#1a1f24; --muted:#57606a; --line:#d0d7de;
+          --card:#f6f8fa; --accent:#b5651d; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0d1117; --fg:#e6edf3; --muted:#8b949e; --line:#30363d;
+            --card:#161b22; --accent:#e08a3c; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+         font:17px/1.6 -apple-system,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:44rem; margin:0 auto; padding:3rem 1.2rem 2rem; }
+  h1 { font-size:2rem; margin:.2rem 0 0; font-family:ui-monospace,"SF Mono",Menlo,monospace; }
+  .tag { font-size:1.15rem; color:var(--muted); margin:.3rem 0 1.6rem; }
+  .rule { border-left:3px solid var(--accent); background:var(--card);
+          padding:.7rem 1rem; border-radius:0 8px 8px 0; margin:1.4rem 0; }
+  section h2 { font-size:.8rem; text-transform:uppercase; letter-spacing:.09em;
+               color:var(--muted); margin:2.2rem 0 .8rem; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; padding:.45rem .6rem; border-bottom:1px solid var(--line);
+           vertical-align:top; }
+  th { color:var(--muted); font-weight:600; }
+  ul { padding-left:1.2rem; }
+  p a, li a, footer a { color:var(--accent); text-decoration:none; }
+  p a:hover, li a:hover, footer a:hover { text-decoration:underline; }
+  footer { max-width:44rem; margin:0 auto; padding:1.2rem;
+           border-top:1px solid var(--line); color:var(--muted); font-size:.85rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Mock Tapeout</h1>
+  <p class="tag">Learn chip tapeout on real boards, in a week, for a few
+  euros.</p>
+
+  <p>A first chip tapeout is slow and expensive, and once the silicon is
+  back nothing inside it can be seen. Mock Tapeout is an open
+  <b>virtual fab</b>: your RTL goes through the same steps as a chip
+  (synthesis, placement, routing, DRC, LVS, timing signoff), but the
+  "die" is a printed circuit board and the standard cells are ordinary
+  logic ICs.</p>
+
+  <div class="rule">Boards come back in about a week, a failed design costs
+  a few euros to redo, and <b>every internal net can be probed</b> with a
+  logic analyser.</div>
+
+  <section>
+    <h2>The fab, mapped onto boards</h2>
+    <table>
+      <tr><th>Real tapeout</th><th>Mock tapeout</th></tr>
+      <tr><td>Standard-cell library</td><td>Single-gate logic ICs, plus counters, adders and decoders</td></tr>
+      <tr><td>Liberty timing</td><td>Datasheet delays, load dependent</td></tr>
+      <tr><td>Metal stack and design rules</td><td>PCB layers and manufacturer rules</td></tr>
+      <tr><td>DRC, LVS, extraction, STA</td><td>The same checks, on copper</td></tr>
+      <tr><td>Multi-project wafer shuttle</td><td>Many student designs on one panel</td></tr>
+      <tr><td>3D stacking</td><td>Stacked boards joined by pin headers</td></tr>
+      <tr><td>Wafer tester</td><td>A carrier board that runs test vectors</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Who it is for</h2>
+    <ul>
+      <li>Students and teachers of digital and VLSI design who want a
+      hands-on tapeout lab.</li>
+      <li>Anyone preparing a first silicon design for an open shuttle such
+      as <a href="https://tinytapeout.com">Tiny Tapeout</a>, who wants to
+      practise the flow first.</li>
+      <li>Makers who build logic-chip computers and want a real design
+      flow behind them.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Status</h2>
+    <p>Mock Tapeout is in early development. The PDK, the flow and
+    the course material will be released under free licences. If you
+    teach a course and would like to run a pilot shuttle, or just want
+    to hear when the first shuttle opens, write to
+    <a href="mailto:s.rabykin@gmail.com">s.rabykin@gmail.com</a>.</p>
+  </section>
+</main>
+
+<footer>
+  <a href="https://github.com/mocktapeout">GitHub</a> ·
+  <a href="https://serge.rabyking.com">Serge Rabyking</a> ·
+  <a href="mailto:s.rabykin@gmail.com">s.rabykin@gmail.com</a>
+</footer>
+</body>
+</html>
